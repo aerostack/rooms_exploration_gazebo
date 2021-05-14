@@ -8,14 +8,14 @@ def mission():
   print("Starting mission...")
   print("Taking off...")
   mxc.executeTask('TAKE_OFF')
-  mxc.executeTask('ROTATE', angle = '90')
+  mxc.executeTask('ROTATE', angle=90)
   for destination in points:
     retry = 0
     exit_status = 3
     while (retry == 0 or exit_status == 3):
       print("Generating path to: " + str(destination))
       result = mxc.executeTask('GENERATE_PATH', destination=destination)
-      query = 'path ('+'?x' +',?y)'.format()
+      query = "path(?x,?y)"
       success , unification = mxc.queryBelief(query)
       if success:
 	x = str(unification['x'])
@@ -32,4 +32,5 @@ def mission():
 	retry = 1
 	print (exit_status)
   mxc.executeTask('LAND')
+  mxc.startTask('SAVE_OCCUPANCY_GRID', map_name="$APPLICATION_PATH/maps/planta")
   print('Finish mission...')
