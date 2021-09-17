@@ -38,7 +38,7 @@ repositories:
   mission_control/python_based_mission_interpreter:
      type: git 
      url: https://github.com/aerostack/python_based_mission_interpreter
-     version: master
+     version: noetic
 
 #----------------------------------------------------------------------------
 # Executive
@@ -58,7 +58,7 @@ repositories:
   simulation/quadrotor_gazebo_simulator:
     type: git 
     url: https://github.com/aerostack/quadrotor_gazebo_simulator
-    version: master
+    version: noetic
     
 #----------------------------------------------------------------------------
 # Hardware interface
@@ -94,7 +94,7 @@ repositories:
   libraries/lib_cvgutils:
     type: git 
     url: https://github.com/aerostack/lib_cvgutils
-    version: master
+    version: noetic
   libraries/pugixml:
     type: git 
     url: https://github.com/aerostack/pugixml
