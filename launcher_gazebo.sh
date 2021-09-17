@@ -15,7 +15,7 @@ fi
 
 gnome-terminal  \
     --tab --title "DroneRotorsSimulator" --command "bash -c \"
-roslaunch ${APLICATION_PATH}/configs/gazebo_files/launch/env_mav_rl_navigation.launch project:=${APLICATION_PATH};
+roslaunch ${APLICATION_PATH}/configs/gazebo_files/launch/env_mav_rl_navigation.launch project:=${APLICATION_PATH} world_name:=lidar_example;
             exec bash\""  &
 
 for (( c=1; c<=$DRONE_SWARM_MEMBERS; c++ )) 

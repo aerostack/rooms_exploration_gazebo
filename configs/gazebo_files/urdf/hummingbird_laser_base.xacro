@@ -57,7 +57,7 @@
 
 
   <xacro:camera_macro
-   namespace="drone111"
+   namespace="${namespace}"
    parent_link="${namespace}/base_link"
    camera_suffix="front"
    frame_rate="30"
