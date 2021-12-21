@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 
 import mission_execution_control as mxc
-
+import time
 points = [[-4.5,5,1],[5, 5, 1],[-4.8, -3.5, 1],[0, 3, 1]]
 
 def mission():
 	print("Starting mission...")
 	print("Taking off...")
 	mxc.executeTask('TAKE_OFF')
-	mxc.executeTask('ROTATE', angle=90)
+	mxc.startTask('FOLLOW_PATH')
+	#mxc.executeTask('ROTATE', angle=90)
+	time.sleep(1)
 	for destination in points:
 		retry = 0
 		exit_status = 3
-		while (retry == 0 or exit_status == 3):
+		while (retry == 0 or exit_status == 3 or exit_status == 6):
 			print("Generating path to: " + str(destination))
 			result = mxc.executeTask('GENERATE_PATH', destination=destination)
-			query = "path(?x,?y)"
+			print ("entra aqui")
+			query = "path(?x,?y)"			
 			success , unification = mxc.queryBelief(query)
-			if success:
+			if success:				
 				x = str(unification['x'])
 				y = str(unification['y'])
 				predicate_path = "path(" + x + "," + y + ")"
@@ -27,8 +30,9 @@ def mission():
 				result = eval(unification['y'])
 				result = [[b for b in a ]for a in result]
 				print ("Moving to"+str(result[len(result)-1]))
-				#print ("Path: "+str(result))
-				exit_status = mxc.executeTask('FOLLOW_PATH', path = result)[1]
+				print ("Path: "+str(result))
+				exit_status = mxc.executeTask('SEND_PATH', path = result, speed = 0.4, yaw_mode = 0)[1]
+				print (exit_status)
 				retry = 1
 	print (exit_status)
 	mxc.executeTask('LAND')
