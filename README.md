@@ -4,6 +4,13 @@ This application illustrates how a drone explores a room in px4 simulator using 
 
 In order to execute the mission, perform the following steps:
 
+- Install package Hector_Slam, Move_base and Amcl if not installed yet:
+```
+$ sudo apt install ros-noetic-hector-slam
+$ sudo apt install ros-noetic-move-base
+$ sudo apt install ros-noetic-amcl 
+```
+
 - Install Lidar components:
 
         $ ./lidar_installation.sh
