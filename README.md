@@ -10,16 +10,16 @@ In order to execute the mission, perform the following steps:
 
 - Execute the script that launches Gazebo for this project:
 
-        $ ./launcher_gazebo.sh
+        $ ./launch_gazebo.sh
 
 
 - Wait until the following window is presented:
 
-<img src="https://github.com/aerostack/rooms_exploration_gazebo/blob/devel/doc/gazeborooms.png" width=600>
+<img src="https://github.com/aerostack/rooms_exploration_gazebo/blob/v5-libeccio/doc/gazeborooms.png" width=600>
 
 - Execute the script that launches the Aerostack components for this project:
 
-        $ ./main_launcher.sh
+        $ ./df_main_launcher.sh
 
 As a result of this command, a set of windows are presented to monitor the execution of the mission. These windows include:
 - Lidar mapping
@@ -27,7 +27,7 @@ As a result of this command, a set of windows are presented to monitor the execu
 
 In order to start the execution of the mission, execute the following command:
 
-	$ rosservice call /drone111/python_based_mission_interpreter_process/start
+	$ rosservice call /drone1/python_based_mission_interpreter_process/start
 
 The following video illustrates how to launch the project:
 
