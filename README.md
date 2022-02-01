@@ -38,10 +38,10 @@ In order to start the execution of the mission, execute the following command:
 
 The following video illustrates how to launch the project:
 
-[ ![Launch](https://i.ibb.co/0Y6y5Rb/Captura-de-pantalla-de-2021-10-12-23-31-24.png)](https://youtu.be/2SUIx0qxNNY)
+[ ![Launch](https://github.com/aerostack/rooms_exploration_gazebo/blob/v5-libeccio/doc/launch_rooms.png)](https://youtu.be/2SUIx0qxNNY)
 
 The following video shows the complete execution:
 
-[ ![Execution](https://i.ibb.co/Qcb0Zby/Captura-de-pantalla-de-2021-10-12-23-31-51.png)](https://youtu.be/qGbNzYkE19U)
+[ ![Execution](https://github.com/aerostack/rooms_exploration_gazebo/blob/v5-libeccio/doc/execute_rooms.png)](https://youtu.be/qGbNzYkE19U)
 
 
